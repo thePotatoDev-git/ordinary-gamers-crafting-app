@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yakuza Crafting App</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <h1>Yakuza Gear Crafting Checklist</h1>
+
+    <ul class="craftItems">
+        <% craftingItems.forEach(item => { %>
+        <li class="item">
+            <% if(item.completed === true) {%> 
+                <span class="completed craft-item"><%= item.item %></span>
+            <% }else { %>
+                <span class="craft-item"><%= item.item %></span>
+            <% } %>
+        </li>
+        
+        <span class='fa fa-trash'></span>
+                <details>
+                    <summary>Materials...</summary>
+                    <ul class="materials">
+                        <% if (item.material1 !== '') {%> 
+                            <li><%= item.material1 %></li>
+                        <%} %>
+                        <% if (item.material2 !== '') {%> 
+                            <li><%= item.material2 %></li>
+                        <%} %>
+                        <% if (item.material3 !== '') {%> 
+                            <li><%= item.material3 %></li>
+                        <%} %>
+                        <% if (item.material4 !== '') {%> 
+                            <li><%= item.material4 %></li>
+                        <%} %>
+                        <% if (item.material5 !== '') {%> 
+                            <li><%= item.material5 %></li>
+                        <%} %>
+                        <% if (item.material6 !== '') {%> 
+                            <li><%= item.material6 %></li>
+                        <%} %>
+                        <% if (item.material7 !== '') {%> 
+                            <li><%= item.material7 %></li>
+                        <%} %>
+                    </ul>
+                </details>
+            </li>
+        <% }); %>
+    </ul>
+    
+    
+
+    <h2>Add Crafting Item</h2>
+    <form class="itemForm" action="/" method="POST">
+        <input type="text" placeholder="Crafting Item" name="item">
+        <input type="text" placeholder="Material" name="material1">
+        <input type="text" placeholder="Material" name="material2">
+        <input type="text" placeholder="Material" name="material3">
+        <input type="text" placeholder="Material" name="material4">
+        <input type="text" placeholder="Material" name="material5">
+        <input type="text" placeholder="Material" name="material6">
+        <input type="text" placeholder="Material" name="material7">
+        <input type="submit">
+    </form>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
