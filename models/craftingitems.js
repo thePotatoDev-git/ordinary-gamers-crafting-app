@@ -31,4 +31,4 @@ const craftingItemSchema = new mongoose.Schema({
     }
 });
 
-module.exports = mongoose.model('CraftingItem', craftingItemSchema, 'craft-list');
+module.exports = mongoose.model('CraftingItems', craftingItemSchema, 'craft-list');

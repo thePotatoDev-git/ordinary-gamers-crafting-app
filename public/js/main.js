@@ -36,7 +36,7 @@ async function deleteItem(){
 async function markComplete(){
     const itemText = this.parentNode.childNodes[1].innerText
     try{
-        const response = await fetch('markComplete', {
+        const response = await fetch('/markComplete', {
             method: 'put',
             headers: {'Content-Type': 'application/json'},
             body: JSON.stringify({
@@ -55,7 +55,7 @@ async function markComplete(){
 async function markIncomplete(){
     const itemText = this.parentNode.childNodes[1].innerText
     try{
-        const response = await fetch('markIncomplete', {
+        const response = await fetch('/markIncomplete', {
             method: 'put',
             headers: {'Content-Type': 'application/json'},
             body: JSON.stringify({

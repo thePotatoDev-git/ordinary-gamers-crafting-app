@@ -8,5 +8,7 @@ const homeController = require('../controllers/home');
 // Add specific routes for specific crafting items
 router.get('/', homeController.getIndex);
 router.post('/', homeController.addItem);
+router.put('/markComplete', homeController.markComplete);
+router.put('/markIncomplete', homeController.markIncomplete);
 
 module.exports = router;

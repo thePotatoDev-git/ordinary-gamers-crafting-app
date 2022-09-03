@@ -1,11 +1,12 @@
-const CraftingItem = require('../models/craftingitems');
+const CraftingItem = require('../models/CraftingItems');
 
 module.exports = {
     getIndex: async (req, res) => {
         try {
+            const itemsLeft = await CraftingItem.countDocuments({completed: false})
             const items = await
             CraftingItem.find();
-            res.render('index.ejs', { craftingItems: items });
+            res.render('index.ejs', { craftingItems: items, left: itemsLeft });
         } catch (err) {
             if (err) return res.status(500).send(err);
         }
@@ -21,6 +22,7 @@ module.exports = {
                 material5: req.body.material5,
                 material6: req.body.material6,
                 material7: req.body.material7,
+                completed: false,
             });
         try {
             await craftingItem.save();
@@ -30,7 +32,29 @@ module.exports = {
             if (err) return res.status(500).send(err);
             res.redirect('/');
         }
-    }
+    },
+    markComplete: async (req, res)=>{
+        try{
+            await CraftingItem.findOneAndUpdate({item:req.body.itemFromJS},{
+                completed: true
+            })
+            console.log('Marked Complete')
+            res.json('Marked Complete')
+        }catch(err){
+            console.log(err)
+        }
+    },
+    markIncomplete: async (req, res)=>{
+        try{
+            await CraftingItem.findOneAndUpdate({item:req.body.itemFromJS},{
+                completed: false
+            })
+            console.log('Marked Incomplete')
+            res.json('Marked Incomplete')
+        }catch(err){
+            console.log(err)
+        }
+    },
 };
 
 // // GET

@@ -11,6 +11,8 @@
 <body>
     <h1>Yakuza Gear Crafting Checklist</h1>
 
+    <h2>Items left: <%= left %></h2>
+
     <ul class="craftItems">
         <% craftingItems.forEach(item => { %>
         <li class="item">
@@ -19,9 +21,9 @@
             <% }else { %>
                 <span class="craft-item"><%= item.item %></span>
             <% } %>
-        </li>
         
-        <span class='fa fa-trash'></span>
+        
+            <span class='fa fa-trash'></span>
                 <details>
                     <summary>Materials...</summary>
                     <ul class="materials">
