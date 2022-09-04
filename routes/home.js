@@ -10,5 +10,6 @@ router.get('/', homeController.getIndex);
 router.post('/', homeController.addItem);
 router.put('/markComplete', homeController.markComplete);
 router.put('/markIncomplete', homeController.markIncomplete);
+router.delete('/deleteItem', homeController.deleteItem);
 
 module.exports = router;

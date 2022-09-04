@@ -35,7 +35,7 @@ module.exports = {
     },
     markComplete: async (req, res)=>{
         try{
-            await CraftingItem.findOneAndUpdate({item:req.body.itemFromJS},{
+            await CraftingItem.findOneAndUpdate({item: req.body.itemFromJS},{
                 completed: true
             })
             console.log('Marked Complete')
@@ -46,11 +46,21 @@ module.exports = {
     },
     markIncomplete: async (req, res)=>{
         try{
-            await CraftingItem.findOneAndUpdate({item:req.body.itemFromJS},{
+            await CraftingItem.findOneAndUpdate({item: req.body.itemFromJS},{
                 completed: false
             })
             console.log('Marked Incomplete')
             res.json('Marked Incomplete')
+        }catch(err){
+            console.log(err)
+        }
+    },
+    deleteItem: async (req, res)=>{
+        console.log(req.body.itemFromJS)
+        try{
+            await CraftingItem.findOneAndDelete({item: req.body.itemFromJS})
+            console.log('Deleted Todo')
+            res.json('Deleted It')
         }catch(err){
             console.log(err)
         }
