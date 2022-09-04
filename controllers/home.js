@@ -59,8 +59,8 @@ module.exports = {
         console.log(req.body.itemFromJS)
         try{
             await CraftingItem.findOneAndDelete({item: req.body.itemFromJS})
-            console.log('Deleted Todo')
-            res.json('Deleted It')
+            console.log('Deleted Item')
+            res.json('Deleted Item')
         }catch(err){
             console.log(err)
         }
