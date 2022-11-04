@@ -1,12 +1,12 @@
-# Yakuza Gear Crafting App
+# Ordinary Gamers Gear Crafting App
 
-For the PlayStation game Yakuza: Like a Dragon.
+Created for Ordinary Gamers, an app for various video games with gear crafting features.
 
-I created this fullstack app to keep track of crafting materials I needed for crafting weapons and armor in the videogame. Enter the item you want to craft and the materials needed, and the data is stored in a database. Cross off what gear is completed and delete entries no longer needed.
+I created this fullstack app to keep track of crafting materials I needed for crafting weapons and armor in videogames. Enter the item you want to craft and the materials needed, and the data is stored in a database. Cross off what gear is completed and delete entries no longer needed.
 
-**Link to project:** https://yakuza-crafting-app.herokuapp.com/
+**Link to project:** https://og-crafting-app.herokuapp.com//
 
-![Yakuza Crafting App gif](https://i.imgur.com/YlLfUzk.gif)
+![Gear Crafting App gif](https://i.imgur.com/YlLfUzk.gif)
 
 ## How It's Made:
 
